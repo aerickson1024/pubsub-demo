@@ -13,6 +13,7 @@
       <main>
         <!-- list module interfaces will be loaded here -->
       </main>
+      
       <aside>
         <!-- stats interface and forms will be loaded here -->
       </aside>
@@ -24,12 +25,11 @@
 
     <script src="main.js" type="module"></script>
 
-    <template id="actorListTemplate">
-      <div class="actor-container"><ul></ul></div>
-    </template>
-
-    <template id="movieListTemplate">
-      <div class="movie-container"><ul></ul></div>
+    <template id="movieFormTemplate">
+      <form class="movie-form">
+        <input type="text" placeholder="Movie Title" />
+        <button>Add Movie</button>
+      </form>
     </template>
 
     <template id="actorFormTemplate">
@@ -38,12 +38,13 @@
         <button>Add Actor</button>
       </form>
     </template>
+    
+    <template id="movieListTemplate">
+      <div class="movie-container"><ul></ul></div>
+    </template>
 
-    <template id="movieFormTemplate">
-      <form class="movie-form">
-        <input type="text" placeholder="Movie Title" />
-        <button>Add Movie</button>
-      </form>
+    <template id="actorListTemplate">
+      <div class="actor-container"><ul></ul></div>
     </template>
   </body>
 </html>

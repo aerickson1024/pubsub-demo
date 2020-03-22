@@ -16,31 +16,33 @@ export const stats = {
 
     //build stats for movies
     pubsub.subscribe('moviesUpdated', stats.moviesUpdated);
-    console.log('STATS: listening for moviesUpdated events');
+    console.log('STATS: event subcribe moviesUpdated');
 
     //build stats for actors
     pubsub.subscribe('actorsUpdated', stats.actorsUpdated);
-    console.log('STATS: listening for actorsUpdated events');
+    console.log('STATS: event subscribe actorsUpdated');
 
     pubsub.subscribe('actorDeleted', stats.actorsUpdated);
+    console.log('STATS: event subscribe actorDeleted');
 
     pubsub.subscribe('movieDeleted', stats.moviesUpdated);
+    console.log('STATS: event subscribe movieDeleted');
   },
   moviesUpdated: list => {
     //the list of movies was just published as updated
     console.log(
-      `STATS: I hear that the movie list now has ${list.length} titles.`
+      `STATS: Movie list now has ${list.length} ${ list.length != 1 ? 'titles' : 'title'}.`
     );
     document.querySelector(
       '.movie-count'
-    ).innerText = `${list.length} movies in list`;
+    ).innerText = `${list.length} ${list.length != 1 ? 'movies' : 'movie'} in list`;
   },
   actorsUpdated: list => {
     console.log(
-      `STATS: I hear that the actor list now has ${list.length} names.`
+      `STATS: Actor list now has ${list.length} ${list.length != 1 ? 'names' : 'name'}.`
     );
     document.querySelector(
       '.actor-count'
-    ).innerText = `${list.length} actors in list`;
+    ).innerText = `${list.length} ${list.length != 1 ? 'names' : 'name'} in list`;
   }
 };

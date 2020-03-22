@@ -15,7 +15,7 @@ export const actorForm = {
     input.value = ''; //clear the form
 
     //tell people an actor was added
-    console.log(`ACTOR FORM: just actorAdded ${name}`);
+    console.log(`ACTOR FORM: event publish actorAdded - ${name}`);
     pubsub.publish('actorAdded', name);
   }
 };
